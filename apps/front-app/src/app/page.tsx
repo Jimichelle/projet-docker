@@ -1,16 +1,6 @@
-import { getTasks } from '@/lib/api';
-import { TaskCard } from '@/components/task-card';
+import { TasksList } from '@/components/tasks-list';
 
-export default async function Home() {
-  let tasks = [];
-  let error = null;
-
-  try {
-    tasks = await getTasks();
-  } catch (e) {
-    error = e instanceof Error ? e.message : 'Une erreur est survenue';
-  }
-
+export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <main className="container mx-auto px-4 py-8">
@@ -23,22 +13,7 @@ export default async function Home() {
           </div>
         </div>
 
-        {error ? (
-          <div className="rounded-lg border border-destructive bg-destructive/10 p-4 text-destructive">
-            <p className="font-medium">Erreur de chargement</p>
-            <p className="text-sm">{error}</p>
-          </div>
-        ) : tasks.length === 0 ? (
-          <div className="rounded-lg border bg-card p-8 text-center">
-            <p className="text-muted-foreground">Aucune tâche pour le moment</p>
-          </div>
-        ) : (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {tasks.map((task) => (
-              <TaskCard key={task.id} task={task} />
-            ))}
-          </div>
-        )}
+        <TasksList />
       </main>
     </div>
   );

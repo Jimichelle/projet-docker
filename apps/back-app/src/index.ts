@@ -1,11 +1,18 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { testConnection, query } from './database/database';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3008;
+
+// Configuration CORS pour permettre les requêtes depuis le frontend
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  credentials: true,
+}));
 
 // Middleware pour parser le JSON
 app.use(express.json());
