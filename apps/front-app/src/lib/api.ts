@@ -53,3 +53,44 @@ export async function createTask(input: CreateTaskInput): Promise<Task> {
   }
 }
 
+export async function updateTaskStatus(
+  taskId: string,
+  status: 'todo' | 'doing' | 'done' | 'cancel'
+): Promise<Task> {
+  try {
+    const response = await fetch(`${API_URL}/task/${taskId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || 'Failed to update task status');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error updating task status:', error);
+    throw error;
+  }
+}
+
+export async function deleteTask(taskId: string): Promise<void> {
+  try {
+    const response = await fetch(`${API_URL}/task/${taskId}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || 'Failed to delete task');
+    }
+  } catch (error) {
+    console.error('Error deleting task:', error);
+    throw error;
+  }
+}
+
