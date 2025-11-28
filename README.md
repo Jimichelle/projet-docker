@@ -40,7 +40,7 @@ Cette méthode utilise les images pré-construites depuis Docker Hub.
 #### 1. Cloner le repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Jimichelle/projet-docker
 cd projet-docker
 ```
 
@@ -468,6 +468,7 @@ docker system prune -a
 
 ## Liens utiles
 
+- **Repository GitHub** : https://github.com/Jimichelle/projet-docker
 - **Docker Hub** : https://hub.docker.com/u/jimichelle
 - **Frontend** : http://localhost:3000
 - **Backend API** : http://localhost:3008
