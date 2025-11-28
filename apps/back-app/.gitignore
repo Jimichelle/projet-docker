@@ -1,0 +1,13 @@
+# Folders
+
+/.idea/
+/dist
+/.vscode/
+/.cursor/
+/node_modules/
+
+# Files
+
+.env.*
+
+

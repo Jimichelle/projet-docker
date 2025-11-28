@@ -1,0 +1,61 @@
+# Dépendances
+node_modules
+npm-debug.log
+pnpm-debug.log
+yarn-error.log
+
+# Fichiers de build Next.js
+.next
+out
+dist
+build
+
+# Fichiers de configuration locale
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Tests et coverage
+coverage
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+
+# Documentation
+README.md
+*.md
+
+# Fichiers Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Next.js cache
+.next/cache
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+

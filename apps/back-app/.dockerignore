@@ -1,0 +1,46 @@
+# Dépendances
+node_modules
+npm-debug.log
+pnpm-debug.log
+yarn-error.log
+
+# Fichiers compilés
+dist
+build
+*.js.map
+
+# Fichiers de configuration locale
+.env
+.env.local
+.env.*.local
+
+# Fichiers IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Tests et coverage
+coverage
+*.test.ts
+*.spec.ts
+__tests__
+
+# Documentation
+README.md
+*.md
+
+# Fichiers Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
